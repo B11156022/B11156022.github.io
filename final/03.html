@@ -1,1 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD</title>
+    <link rel="stylesheet" type="text/css" href="rwd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        a{
+            display: block;
+            width: 100%;
+            line-height: 80px;
+            text-decoration: none;
+            font-size: 16px;
+            color: #3a3a3a;
+        }
+        
+        img{ /*文章圖片*/
+            max-width: 100%;
+
+            vertical-align: middle;
+           
+        }
+        .fas.fa-user-circle{
+            font-size: 5%;
+            vertical-align: middle;
+        }
+        
+        .fas.fa-bars{
+            display: inline-block;
+            width: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 30px;
+            color: #fff;
+            background-color: #04404b;
+        }
+        
+        
+        .headerNav{
+           background-color: #eae0d0;
+           height: 80px;
+           position: relative;
+        }
+        .headerNavShow{
+            background-color: #eae0d0;
+            height: 80px;
+            position: relative;
+        }
+        .logo::after,
+        .userAccount::after,
+        .headerNav::after{
+            content: '';
+            clear: both;
+        }
+        #mobileMenu{
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .mobileMenuBtn{
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .logo,
+        .userAccount{
+            width: 250px;
+            padding: 0px 20px;
+            text-align: center;
+        }
+        .logo{
+            float: left;
+        }
+        
+        .userAccount{
+           display: none;
+        }
+        .logo::after,
+        .userAccount::after{
+            content: '';
+            clear: both;
+        }
+        .mainNav{
+            width: 100%;
+            height: 100vh;
+            background:  #cebba2;
+            position: absolute;
+            top: 80px;
+            left: -100%;
+            transition: .5s ease-in-out;
+        }
+        .mainNavShow{
+            width: 100%;
+            height: 100vh;
+            background:  #cebba2;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            transition: .5s ease-in-out;
+        }
+        .mainNav .navItem{
+            text-align: center;
+            border-bottom: 2px dashed gray;
+        }
+        .mainNav .navItem:first-child{
+            background-color: #774b0d;
+        }
+        .mainNav .navItem:nth-child(2){
+            background-color: #144210;
+        }
+        .mainNav .navItem:first-child a,
+        .mainNav .navItem:nth-child(2) a{
+            color: #fff;
+        }
+        
+        #mobileMenu:checked ~ .headerNav .mainNav{
+            left: 0;
+        }
+        
+        .exercise{
+            position: relative;
+        }
+        .exercise:hover{
+            background-color: #e4c58d;
+        }
+        .exercise:hover .exerciseList{
+            display: block;
+        }
+        
+        .exerciseList{
+            display: none;
+            width: 100%;
+            padding: 15px;
+            background-color: #e4c58d;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+        .exerciseList .exerciseForList{
+            border: 2px dashed gray;
+            background-color: #c08d76;
+            margin-top: -2px;
+        }
+        .exerciseList .exerciseForList:hover{
+            background-color: #a09380;
+        }
+        
+        
+        
+        /* XX-Large Device */
+        @media(min-width: 1024px){
+            #mobileMenu{
+                visibility:hidden
+            }
+            .mainNav{
+                background: #eae0d0;
+                width: 70%;
+                height: 80px;
+                top:0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                text-align: right;
+                font-size: 0;
+                /*     
+                    問題：擋住userAccount
+                    display: flex;
+                    justify-content: flex-end; 
+                */
+            }
+            .mainNav .navItem{
+                display: inline-block;
+                width: 120px;
+                border-bottom: none;
+                
+            }
+            .exerciseList .exerciseForList{
+                border: none;
+                background-color: #bdb4a7;
+                margin-top: 0px;
+            }
+            
+            .exerciseList{
+                width: 120px;
+                padding: 0;
+                background-color: #bdb4a7;
+            }
+            .exerciseList .exerciseForList{
+                border-top: 2px dashed gray;
+            }
+            .userAccount{
+                display: block;
+                float: right;
+                border-left: 2px dashed gray;
+            }
+            .mobileMenuBtn{
+                display: none;
+                float: right;
+                
+            }
+        
+        
+        
+            *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            
+        } 
+        
+        .clearfix:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        
+        body {
+            line-height: 1.6;
+        }
+        
+      
+        
+        .wrap {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 1em;
+        }
+        
+     
+        
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            padding-bottom: 1em;
+        }
+        
+    
+        
+      
+         
+        </style>
+</head>     
+<body>
+    <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/c/ca/Studio_Ghibli_logo.svg/640px-Studio_Ghibli_logo.svg.png" alt=""width="250"
+    height="auto">
+    
+    <section class="headerNav">
+        <div class="container">
+           
+            <h1 class="logo">
+                
+            </h1>
+            
+            <i class="fas fa-bars" id="mobileMenu"></i>
+
+            <ul class="mainNav">
+                <li class="navItem exercise">
+                    <a href="https://b11156022.github.io/final/index.html">
+                       <b>首頁</b>
+                    </a>
+                   
+                </li>
+
+
+
+                <li class="navItem exercise">
+                    <a href="https://b11156022.github.io/final/%E4%BD%9C%E5%93%81%E9%9B%86.html">
+                        <b>著作</b>
+                       
+                    </a>
+            
+                </li>
+
+
+                <li class="navItem exercise">
+                    <a href="#">
+                        <b>相關場所</b>
+                        <i class="fas fa-caret-down"></i>
+                        
+                    </a>
+                    <ul class="exerciseList">
+                        <li class="exerciseForList">
+                            <a href="">三鶯美術館</a>
+                        </li>
+                        <li class="exerciseForList">
+                            <a href="">取材地點</a>
+                        </li>
+                        
+                        </li>
+                    </ul>
+                </li>
+    </section>
+    <div class="wrap">  
+          <ul class="news clearfix">
+            <li>
+                <h1 align="left">三鶯美術館</h1>	
+                
+            </li>
+                <h1></h1>
+       
+                <h1>&nbsp  </h1>	
+                <img src="  https://momotravel.tw/wp-content/uploads/20190222204826_63.jpg" alt="">
+              
+                <br>
+                <h3> 三鷹市立動畫美術館（日語：三鷹市立アニメーション美術館）。該館由三鷹市政府以指定方式交由德間紀念動畫文化財團運營，營利性收入則由株式會社曼馬由特隊管理。館主由吉卜力工作室的代表人物宮崎駿擔任。首任館長是宮崎駿長子宮崎吾朗，2005年6月24日由中島清文接任第二任館長。常設展覽包括動畫的原理、原始的動畫片展示，重現製作工作室的場景，可以看到歷年吉卜力作品的原稿等資料。</h3>
+                
+                <h2><b>開館時間：</b>10:00~18:00 (官網開館日程表)<br>
+
+                    
+                    <b>休館時間：</b><br>
+                    
+                    每周二公休。(例外請見官網開館日程表)<br>
+                    維修關閉：2019年5月21日(星期二)〜5月31日(星期五)<br>
+                    展覽變更關閉：2019年11月4日(星期一)〜11月15日(星期五)<br>
+                    冬天關閉：2019年12月27日(星期五)〜2020年1月2日(星期四)<br>
+                    </h2>
+
+                    <h2><b> 票價依年齡區分如下： </b><br>
+                    ※票價區分以年齡為準。<br>
+                    成人/大學生（19歲以上），每人1000日元。<br>
+                    中學、高中生（13～18歲），每人700日元。<br>
+                    小學生（7～12歲），每人400日元。<br>
+                    嬰兒（4～6歲），每人100日元。<br></h2>
+                   
+           
+      
+</body>
+<script>
+    var mobileMenu = document.getElementById("mobileMenu");
+    var mainNav = document.querySelector(".mainNav");
+    var headerNav = document.querySelector(".headerNav");
+
+    mobileMenu.addEventListener("click", function() {
+        mainNav.classList.toggle("mainNavShow");
+        headerNav.classList.toggle("headerNavShow");
+  }  );
+</script>
+</html>
